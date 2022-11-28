@@ -1,8 +1,10 @@
 package com.example.blogapplication.repositories;
 
 import com.example.blogapplication.models.Blog;
+import com.example.blogapplication.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BlogRepository extends JpaRepository<Blog, Long> {
-    Blog findById(long id);
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findById(long id);
 }

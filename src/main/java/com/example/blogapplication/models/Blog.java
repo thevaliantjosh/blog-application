@@ -16,6 +16,9 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
+    private User user;
+
 
 
     //Getters and Setters
@@ -44,6 +47,14 @@ public class Blog {
         this.id = id;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     //Constructors
 
     public Blog(){
@@ -54,4 +65,17 @@ public class Blog {
         this.title = title;
         this.body = body;
     }
-}
+
+    public Blog(long id, String title, String body){
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
+
+    public Blog(String title, String body, User user){
+        this.title = title;
+        this.body = body;
+        this.user = user;
+    }
+
+}//End of Blog Class
